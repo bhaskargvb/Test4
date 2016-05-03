@@ -1,0 +1,84 @@
+---
+output:
+  html_document:
+    
+    highlight: null
+    theme: null
+  pdf_document: default
+geometry: margin=0in
+---
+<!--- <button onclick="goBack()">Go Back</button> --->
+
+<style>
+#header {
+    background-color:`r bg_color1`;
+    
+    text-align:center;
+    padding:5px;
+}
+#left {
+    line-height:10px;
+    
+    height:400px;
+    width:59%;
+    float:left;
+    padding:5px;	      
+}
+#right {
+    width:39%;
+    float:right;
+    padding:5px;	 	 
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+</style>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+<script "text/javascript">
+ 
+
+var eventPages = [`r paste(questions_order$question_id1,collapse = ",")`]
+
+var totalPages = eventPages.length;
+
+
+function nav(len) {
+x = document.getElementById("iframe1").src;;
+var cururl = x.substr(x.lastIndexOf('/') + 1);
+var curpn = eventPages.indexOf(cururl);
+var path = "questions/"
+var num = (curpn+len);
+
+if(num >= 0 && num < totalPages) {
+document.getElementById("iframe1").src = eventPages[num];
+document.getElementById("demo").innerHTML = (num+1)+"/"+totalPages;
+
+
+}
+
+}
+
+</script>
+
+<div align = "center">
+<h1><a href="../index.html#/slide-7">Questionwise Revision </a></h1>
+<a href="javascript:nav(-1)" target ="iframe1"><< Previous</a>  <span id="demo">1/`r nrow(questions_order) `</span> <a href="javascript:nav(1)">Next >></a>
+
+</div>
+
+
+<div align = 'center'>
+<p><iframe src='`r paste(questions_order$question_id[1],".html",sep = "") `' scrolling='no'  id='iframe1' style = 'height:465px;width:80%;' ></iframe></p>
+</div>
+
+

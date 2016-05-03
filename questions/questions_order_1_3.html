@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title></title>
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+<!--- <button onclick="goBack()">Go Back</button> --->
+<style>
+#header {
+    background-color:LightSalmon;
+    
+    text-align:center;
+    padding:5px;
+}
+#left {
+    line-height:10px;
+    
+    height:400px;
+    width:59%;
+    float:left;
+    padding:5px;          
+}
+#right {
+    width:39%;
+    float:right;
+    padding:5px;         
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;      
+}
+</style>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+<script "text/javascript">
+ 
+
+var eventPages = ["1412046.html","1412047.html","1412048.html","1412049.html","1412050.html","1412051.html","1412052.html","1412053.html","1412054.html","1412055.html","1412056.html","1412057.html","1412032.html","1412033.html","1412034.html","1412035.html","1412036.html","1412037.html","1412038.html","1412039.html","1412040.html","1412041.html","1412042.html","1412043.html","1412044.html","1412045.html","1412029.html","1412028.html","1412030.html","1412031.html"]
+
+var totalPages = eventPages.length;
+
+
+function nav(len) {
+x = document.getElementById("iframe1").src;;
+var cururl = x.substr(x.lastIndexOf('/') + 1);
+var curpn = eventPages.indexOf(cururl);
+var path = "questions/"
+var num = (curpn+len);
+
+if(num >= 0 && num < totalPages) {
+document.getElementById("iframe1").src = eventPages[num];
+document.getElementById("demo").innerHTML = (num+1)+"/"+totalPages;
+
+
+}
+
+}
+
+</script>
+<div align="center">
+<h1>
+<a href="../index.html#/slide-7">Questionwise Revision </a>
+</h1>
+<p><a href="javascript:nav(-1)" target="iframe1">&lt;&lt; Previous</a> <span id="demo">1/30</span> <a href="javascript:nav(1)">Next &gt;&gt;</a></p>
+</div>
+<div align="center">
+<p>
+<iframe src="1412046.html" scrolling="no" id="iframe1" style="height:465px;width:80%;">
+</iframe>
+</p>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
